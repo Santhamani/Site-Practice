@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head><% include partials/template/head.ejs %></head>
+  <body id="<%= pageId %>">
+    <% include partials/template/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <article class="chat">
+            <header class="chat-header">
+              <div class="h1 text-center chat-title">Careers
+              </div><!-- Careers-title -->
+            </header><!-- chat-header -->
+                  <table border="0">
+                      <% for(var i=0; i<data.length; i++) { %>
+                    <tr>
+                      <td><div><b>Job Title</b><br><%= data[i].job_title %></div></td>
+                      <td><div><b>Role</b><br><%= data[i].role %></div></td>
+                      <td><div><b>Job Location</b><br><%= data[i].location %></div></td>
+                    </tr>
+                    <tr>
+                      <td><div><b>Experience</b><br><%= data[i].experience %></div></td>
+                      <td><div><b>Salary</b><br><%= data[i].salary %></div></td>
+                      <td><div><b>Job Type</b><br><%= data[i].job_type %></div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3"><div><b>Skills</b><br><%= data[i].skills %></div></td>
+                    <!-- </div> -->
+                    <tr>
+                      <td colspan="3"><div><b>Description</b><br><%= data[i].job_description %></div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                      <button class="btn btn-warning pull-right" data-toggle="modal" data-target="#myModal">Apply</button></td>
+                    </tr>
+                    <tr><td colspan="3"><hr></td></tr>
+                    <% } %> 
+                  </table> 
+                 
+                  <!-- Modal -->
+                  <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Apply Here</h4>
+                          </div>
+                         
+                          <div class="modal-body">
+                              <form class="feedback-form" action="/apply" method="POST">
+                                <div class="form-group">
+                                  <label for="feedback-form-name">Name</label>
+                                  <input type="text" required class="form-control" name="name" id="feedback-form-name" placeholder="Enter your name">
+                                </div>
+                    
+                                <div class="form-group">
+                                  <label for="feedback-form-title">Current Company</label>
+                                  <input type="text" required class="form-control" name="current_company" id="feedback-form-current_company" placeholder="Current Company">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="feedback-form-title">Current Designation</label>
+                                    <input type="text" class="form-control" name="current_designation" id="feedback-form-current_designation" placeholder="Current Designation">
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="feedback-form-title">Total Experience</label>
+                                      <input type="text" required class="form-control" name="total_experience" id="feedback-form-total_experience" placeholder="Total Experience">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Current Location</label>
+                                        <input type="text" required class="form-control" name="current_location" id="feedback-form-current_location" placeholder="Current Location">
+                                      </div>
+
+                                  <div class="form-group">
+                                      <label for="feedback-form-title">Current Salary</label>
+                                      <input type="text" class="form-control" name="current_salary" id="feedback-form-current_salary" placeholder="Current Salary">
+                                    </div>
+                                  
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Notice Period</label>
+                                        <input type="text" required class="form-control" name="notice_period" id="feedback-form-notice_period" placeholder="Notice Period">
+                                      </div>
+                                    
+                                    <div class="form-group">
+                                          <label for="feedback-form-title">Skills</label>
+                                          <input type="text" required class="form-control" name="skills" id="feedback-form-skills" placeholder="Skills">
+                                        </div>
+
+                                    <div class="form-group">
+                                        <label for="feedback-form-message">Current Project</label>
+                                        <textarea type="text" name="current_project" placeholder="Enter your project details, then hit the submit" class="form-control" id="feedback-form-current_project" rows="6"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Preferred Location</label>
+                                        <input type="text" class="form-control" name="preferred_location" id="feedback-form-preferred_location" placeholder="Preferred Location">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Phone Number</label>
+                                        <input type="text" required class="form-control"  maxlength="10" onkeypress='phvalidate(event)' name="phone_number" id="feedback-form-phone_number" placeholder="Phone Number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Email Id</label>
+                                        <input type="email" required class="form-control" name="email_id" id="feedback-form-email_id" placeholder="Email Id">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="feedback-form-title">Upload Resume</label>
+                                        <input type="file" required class="form-control" name="upload_file" id="feedback-form-upload_file">
+                                    </div>
+
+                                    <div class="form-group">
+                                      <button type="submit" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal1">Apply</button>
+                                    </div>
+
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="myModal1" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <h3>Applied Successfully</h3>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                      
+                        </div>
+                      </div>
+             
+          </article><!-- article -->
+        </div><!-- col-sm-12 -->
+      </div><!-- row -->
+    </div><!-- container -->
+    <% include partials/template/jsdefaults.ejs %>
+    <script>
+        function phvalidate(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode( key );
+        var regex = /[0-9]|\./;
+        if( !regex.test(key) ) {
+          theEvent.returnValue = false;
+          if(theEvent.preventDefault) theEvent.preventDefault();
+        }
+      }
+
+    </script>
+  </body>
+</html>

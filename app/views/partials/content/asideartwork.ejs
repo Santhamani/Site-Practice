@@ -1,0 +1,15 @@
+
+<article class="sidebar">
+            <h1 class="sidebar-title">Our Goal</h1>
+            <p class="sidebar-body">
+                <q>Our goal is quality, not the quantity.
+                We always aim to deliver the project timely with higher standards.</q>
+            </p>
+            <div class="pixgrid clearfix">
+                <% if(artwork.length > 0){ %>
+                  <%  for(i=0;i<artwork.length;i++){ %>
+                        <img src="/images/artworks/<%= artwork[i]%>" class="wow zoomIn" alt="Artwork">
+                  <%  }%>
+                 <%  } %>
+            </div>
+</article>  

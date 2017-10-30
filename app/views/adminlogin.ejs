@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include partials/template/head.ejs %>
+   </head>
+
+  <body id="<%= pageId %>">
+
+  <% include partials/template/adminheader.ejs %>
+
+  <!-- <a class="btn btn-primary pull-right" href="http://localhost:3030/admin">Logout</a> -->
+<div class="container">
+
+  <form class="form-horizontal" action="/add" method="post" id="form1">
+      <input type="hidden" id="id" name="id" value="">
+      <table class="table table-striped">
+        <div class="row">
+          <div class="container-fluid">
+          <h3 class="page-header text-center">Add Jobs</h3>
+          <tr>
+             <td>
+                <div class="career-input">
+                    <input class="form-control" id="job_title" type="text" name="job_title" placeholder="Enter the Job Title" value="">
+                </div>
+              </td> 
+              <td>
+                <div class="career-input">
+                  <input class="form-control" id="role" type="text" name="role" placeholder="Enter the Role" value="">
+                </div>
+              </td>
+              <td>
+                <div class="career-input">
+                   <input class="form-control" id="location" type="text" name="location" placeholder="Enter the Location" value="">
+                </div>
+              </td>
+          </tr>
+            <tr>
+              <td>
+                <div class="career-input">
+                  <input class="form-control"  id="experience" type="text" name="experience" placeholder="Enter the Experience" value="">
+                </div>
+              </td>
+              <td>
+                <div class="career-input">
+                  <input class="form-control" id="salary" type="text" name="salary" placeholder="Enter the Salary" value="">
+                </div>
+              </td>
+              <td>
+                <div class="career-input ">
+                  <input class="form-control" id="job_type" type="text" name="job_type" placeholder="Enter the Jobytype" value="">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <div class="career-input">
+                  <input class="form-control" id="skills" type="text" name="skills" placeholder="Enter the skills" value="">
+                </div>
+              </td>
+            </tr>
+           <tr>
+              <td colspan="3">
+                <div class="career-input">
+                  <textarea class="form-control" rows="6" id="job_description" name="job_description" placeholder="Enter the Description for postion" value=""></textarea>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <div class="col-md-1 career-input add add_btn">
+                  <input class="btn btn-lg btn-info" type="submit" id="subbtn" name="sub" value="Add Job">
+                </div>
+              </td>
+            </tr>
+        </div>
+        </div>
+      </table>
+         <div class="container">
+            <h3 class="page-header text-center">Preview Post Jobs</h3>
+            <table class="table_data" border="0">
+              <% for(var i=data.length-1; i>=0; i--)  { %>
+                <tr><td><td><b>Job Id</b><br><%= data[i]._id %></td></td></tr>
+                <tr>
+                  <td><b>Job Title</b><br><%= data[i].job_title %></td>
+                  <td><b>Role</b><br><%= data[i].role %></td>
+                  <td><b>Job Location</b><br><%= data[i].location %></td>
+                </tr>
+                <tr>
+                  <td><b>Experience</b><br><%= data[i].experience %></td>
+                  <td><b>Salary</b><br><%= data[i].salary %></td>
+                  <td><b>Job Type</b><br><%= data[i].job_type %></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><b>Skills</b><br><%= data[i].skills %></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><b>Description</b><br><%= data[i].job_description %></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><br>
+                      <div><a class="btn btn-info editlink" href="javascript:void(0)" data-id="<%= data[i]._id %>">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/delete?id=<%= data[i]._id %>" onclick='return confirm("You are going to delete this record. Continue")' class="btn btn-danger pull-right">Delete</a></div>
+                </tr>
+                <tr><td colspan="3"><hr></td></tr>
+              <% } %> 
+            </table>
+          </div>
+        <!-- </div> -->
+      <!-- </table> -->
+    </form>
+    
+  </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+     $(document).ready(function() { 
+        $('.editlink').on('click', function(){
+          var id = $(this).data('id');
+          $.ajax({
+            method: "GET",
+            url: "/fetchdata",
+            data: { id:id },
+          }).done(function( data ) {
+            //var result = $.parseJSON(data);
+            $('#id').val(data[0]['_id']);
+            $('#job_title').val(data[0]['job_title']);
+            $('#role').val(data[0]['role']);
+            $('#location').val(data[0]['location']);
+            $('#experience').val(data[0]['experience']);
+            $('#salary').val(data[0]['salary']);
+            $('#job_type').val(data[0]['job_type']);
+            $('#skills').val(data[0]['skills']);
+            $('#job_description').val(data[0]['job_description']);
+            $("#subbtn").val('Edit Job');
+            $('#form1').attr('action', '/edit');
+          });
+        });
+      });
+   
+      function add(form1skills){
+          console.log();
+    }
+    </script>
+    
+  <% include partials/template/jsdefaults.ejs %>
+ 
+  </body>
+</html>

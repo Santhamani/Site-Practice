@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include partials/template/head.ejs %>
+   </head>
+
+  <body id="<%= pageId %>">
+
+    <% include partials/template/header.ejs %>
+   
+    <div class="container">
+      <div class="row text-center" style="padding-top:40px;">
+        <p>We provide unique Web, Mobile and ERP solutions to your business and to go-to market. Lakshya offer scalable end-to-end application and erp solution with expertise designs and development in diverse platforms, tool and techniques combined with best industrial best practices.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+           <% include partials/content/speakerslist.ejs %>
+        </div><!-- primary -->
+        <aside class="col-sm-4">
+
+                <% include partials/content/asideartwork.ejs %>
+
+        </aside><!-- secondary -->
+      </div>
+    </div><!-- container -->
+    
+      <% include partials/template/jsdefaults.ejs %>
+  
+  </body>
+</html>

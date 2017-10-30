@@ -1,0 +1,33 @@
+
+{
+  "speakers": [{
+    "title" : "Web development",
+    "name": "Website",
+    "shortname" : "web_development",
+    "summary" : "Lakshya is a web and mobile application development company focusing on the clients who wants to shape their ideas to web or mobile applications. Every company in the world is looking for online market by having their own website or mobile application. We are capability of meeting all your requirements from simple online brochure sites to full-fledged database driven e-commerce websites.",
+    "description": "<p>Lakshya is a web and mobile application development company focusing on the clients who wants to shape their ideas to web or mobile applications. Every company in the world is looking for online market by having their own website or mobile application. We are capability of meeting all your requirements from simple online brochure sites to full-fledged database driven e-commerce websites.</p><p><b>Our Development Process</b><ul><li>Planning</li><li>Analysis</li><li>Development</li><li>Testing</li><li>Release</li><li>Maintenance</li></ul><p><b>Our Web Site Deisgns are</b><ul><li>Responsive</li><li>Mobile friendly</li><li>Optimized SEO</li><li>Single Page Applications</li><li>Dynamic</li><li>CMS</li></p>",
+    "artwork": ["lakshya_angularjs.png", "lakshya_mean.png", "lakshya_mongodb.png", "lakshya_nodejs.png","lakshya_java.png","lakshya_dotnet.png"]
+  },{
+    "title" : "App Development",
+    "name": "Mobiles",
+    "shortname" : "mobile_development",
+    "summary": "Lakshya help you turn your better idea turning into great mobile applications. We are standing in of the beast when it comes to app development for IOS, Android and Windows.",
+    "description": "<p>Lakshya help you turn your better idea turning into great mobile applications. We are standing in of the beast when it comes to app development for IOS, Android and Windows.</p><p>We have evolved all these into a one stop destination for mobile application creation to the final step of app marketing. With over three years of mobile application experience, we position ourselves as one of the most reliable mobile app development company today.</p><p>We provide 100% Customer Satisfaction by developing their mobile application and also we believe in building long term business relationship to help achieve your business goals.</p><p>We choose the most intelligent, hardworking mobile apps developers. Our developers have great knowledge of major platforms/frameworks used for mobile development. With a team of dedicated developers, designers, and creative engineers, we are equipped to meet our beloved customer requirements.</p>",
+    "artwork" : [ "lakshya_ionic.png","lakshya_sqllite.png","lakshya_windows.png" , "lakshya_ios.png","lakshya_android.png" ]
+  },{
+    "title" : "ERP Solution",
+    "name": "Business Solutions",
+    "shortname" : "ERP",
+    "summary": "Enterprise Applications are the always backbone of any companies business and their workforce. Our team of Enterprise development experts will help you to analyze and design your requirements to understand the platform that would best serve your requirements and business needs.",
+    "description": "<div><p>Enterprise Applications are the always backbone of any companies business and their workforce. Our team of Enterprise development experts will help you to analyze and design your requirements to understand the platform that would best serve your requirements and business needs.</p><p>Our development is familiar with the all types of Industries to ensure the customer business meets by developing the customized ERP.Lakshya understands the limitations of client fixed budget and will plan it and work accordingly.</p><div><b>Few of our ERP services:</b><ul><li>Enterprise Resource Planning</li><li>Enterprise Asset Management</li><li>Customer Relationship Management</li><li>Supply Chain Management System</li><li>Business Processing Management System.</li></ul></div></div>",
+    "artwork" : ["lakshya_msdynamics.png","lakshya_oracle.png","lakshya_sap.png"]
+  },{
+    "title" : "Corporate Training",
+    "name": "Bignners",
+    "shortname" : "Corporate_Training",
+    "summary": "Lakshya also provide the corporate training to few MNC’s. We provide training on niche technologies to our customers. Over the years, Lakshya was providing the customized corporate training across multiple platforms.",
+    "description": "<p>Lakshya also provide the corporate training to few MNC’s. We provide training on niche technologies to our customers. Over the years, Lakshya was providing the customized corporate training across multiple platforms.</p><p>In today’s competitive world every company has realized the significance of training to their employees. We run training programs for both professionals and companies.</p><div><b>We provide training of cross platform:</b><ul><?ul><li>Web Tehnologies</li><li>Mobile Technologies</li><li>EPR Technologies</li><li>Cloud Technologies</li></div>",
+    "artwork" : ["lakshya_css.png","lakshya_html.png","lakshya_bootstrap.png","lakshya_javascript.png","lakshya_jquery.png"]
+  }]
+}
+

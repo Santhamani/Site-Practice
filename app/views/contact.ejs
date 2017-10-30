@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head><% include partials/template/head.ejs %></head>
+  <body id="<%= pageId %>">
+    <% include partials/template/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8" ng-controller="myCtrl">
+          <h1 class="feedback-form-title">Send us </h1>
+          
+          <form class="feedback-form" action="/contactus" method="POST">
+            <div class="form-group">
+              <label for="feedback-form-name">Name</label>
+              <input type="text" class="form-control" name="name" id="feedback-form-name" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-form-title">Subject</label>
+              <input type="text" class="form-control" name="title" id="feedback-form-title" placeholder="Subject">
+            </div>
+
+            <div class="form-group">
+                <label for="feedback-form-message">Message</label>
+                <textarea type="text" name="message" placeholder="Enter your message, then hit the submit" class="form-control" id="feedback-form-message" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Submit</button>
+          </form>
+        </div><!-- primary -->
+   
+        <aside class="col-sm-4 hidden-xs hidden-sm">
+          <div class="maincontent feedback">
+              <h2 class="article-title text-center">Address</h2>
+              <% include partials/content/contactus.ejs %>
+          </div>
+        </aside><!-- secondary -->
+      </div>
+    </div><!-- container -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+              <h3>Message Sent Successfully</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+        <% include partials/content/footer.ejs %>
+    </div>
+      <% include partials/template/jsdefaults.ejs %>
+  </body>
+</html>

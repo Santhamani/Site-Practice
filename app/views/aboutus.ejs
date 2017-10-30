@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include partials/template/head.ejs %>
+   </head>
+
+  <body id="<%= pageId %>">
+
+  <% include partials/template/header.ejs %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+             
+              <% include partials/content/maincontent.ejs %>
+              
+        </div><!-- primary -->
+        <aside class="col-sm-4">
+
+                <% include partials/content/asidemaincontent.ejs %>
+
+        </aside><!-- secondary -->
+      </div>
+      
+           <% include partials/content/ourculture.ejs %>
+     
+    </div><!-- container -->
+    
+      <% include partials/template/jsdefaults.ejs %>
+  
+  </body>
+</html>
